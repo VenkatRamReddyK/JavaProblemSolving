@@ -14,9 +14,9 @@ public enum PLAYERTYPE {NONE,HUMAN,AI};
 public enum COINNAME {N,H,A};
  
     public COINNAME[][] currentGameState={
-                            {COINNAME.A,COINNAME.N,COINNAME.N},
-                            {COINNAME.A,COINNAME.N,COINNAME.N},
-                            {COINNAME.H,COINNAME.A,COINNAME.N}
+                            {COINNAME.H,COINNAME.N,COINNAME.N},
+                            {COINNAME.N,COINNAME.N,COINNAME.N},
+                            {COINNAME.N,COINNAME.A,COINNAME.N}
                           };        
     PLAYERTYPE currentTurn;
     Player currentPlayer;
