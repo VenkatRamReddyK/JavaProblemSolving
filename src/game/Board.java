@@ -14,9 +14,9 @@ public enum PLAYERTYPE {NONE,HUMAN,AI};
 public enum COINNAME {N,H,A};
  
     public COINNAME[][] currentGameState={
-                            {COINNAME.H,COINNAME.A,COINNAME.N},
                             {COINNAME.A,COINNAME.N,COINNAME.N},
-                            {COINNAME.H,COINNAME.N,COINNAME.N}
+                            {COINNAME.A,COINNAME.N,COINNAME.N},
+                            {COINNAME.H,COINNAME.A,COINNAME.N}
                           };        
     PLAYERTYPE currentTurn;
     Player currentPlayer;
@@ -51,7 +51,7 @@ public enum COINNAME {N,H,A};
         }        
     }  
     public void startGame() {        
-        int currentIndex=-1,count=4;
+        int currentIndex=-1;
          Board.display(currentGameState);            
         do{
            
@@ -68,18 +68,13 @@ public enum COINNAME {N,H,A};
             }                      
             Board.display(currentGameState);            
             alterOver();
-            count++;
-            System.out.println("Count: "+count);
-            if(count==9){
-                System.out.println("stalemate");
+           
+            if(GameSpecs.isStalemate(currentGameState)){
+                System.out.println("Cheers Game IS DRAWN !");
+                break;
             }
             
-        }while(!(GameSpecs.isGameOver(currentGameState,COINNAME.A) || GameSpecs.isGameOver(currentGameState,COINNAME.H) || GameSpecs.isStalemate(currentGameState)));     
-//  || isGameOver(GameState.EMPTY)
-        if(GameSpecs.isStalemate(currentGameState))
-            System.out.println("Stalemate");
-        
-        
+        }while(!(GameSpecs.isGameOver(currentGameState,COINNAME.A) || GameSpecs.isGameOver(currentGameState,COINNAME.H)));             
         System.out.println(GameSpecs.whoWon(currentGameState)+" Won the Game");
         
     }
