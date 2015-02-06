@@ -12,13 +12,15 @@ package problemsolving.graycode;
 public class GrayCode {
     static StringBuffer buffer;
     static int N=4; // gray code of size N
-    static int[] window={0,0,1,0,1,1,0};    
+//    static int[] window={0,0,1,0,1,1,0};    
+    static int[] windowLeft={0,0,1,0,1,1,0};    
+    static int[] windowRight={1,1,0,0,1,1,0};    
     private static void traverse(int index,boolean isFirstHalf) {
-        int leftIndex,rightIndex;
-        if(!isFirstHalf && index==0)
-                    buffer.append(1); 
-        else
-            buffer.append(window[index]);              
+        int leftIndex,rightIndex;        
+            if(isFirstHalf)
+                 buffer.append(windowLeft[index]); 
+            else 
+                buffer.append(windowRight[index]); 
         if(buffer.length()==N){ // Buffer is full
             System.out.println(buffer);
         }else{
@@ -26,13 +28,10 @@ public class GrayCode {
             rightIndex=2*index+2;
             leftIndex = updateIndex(leftIndex);
             rightIndex = updateIndex(rightIndex);
-            if(isFirstHalf){
+          //  if(isFirstHalf){
                 traverse(leftIndex,isFirstHalf);
                 traverse(rightIndex,isFirstHalf);            
-            }else{
-                traverse(rightIndex,isFirstHalf);            
-                traverse(leftIndex,isFirstHalf);                
-            }
+          
         }
         buffer.deleteCharAt(buffer.length()-1);
         // if Left child is traverses Traverse right child 
