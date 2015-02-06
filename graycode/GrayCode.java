@@ -11,7 +11,7 @@ package problemsolving.graycode;
  */
 public class GrayCode {
     static StringBuffer buffer;
-    static int N=5; // gray code of size N
+    static int N=4; // gray code of size N
     static int[] window={0,0,1,0,1,1,0};    
     private static void traverse(int index,boolean isFirstHalf) {
         int leftIndex,rightIndex;
@@ -26,8 +26,13 @@ public class GrayCode {
             rightIndex=2*index+2;
             leftIndex = updateIndex(leftIndex);
             rightIndex = updateIndex(rightIndex);
-            traverse(leftIndex,isFirstHalf);
-            traverse(rightIndex,isFirstHalf);            
+            if(isFirstHalf){
+                traverse(leftIndex,isFirstHalf);
+                traverse(rightIndex,isFirstHalf);            
+            }else{
+                traverse(rightIndex,isFirstHalf);            
+                traverse(leftIndex,isFirstHalf);                
+            }
         }
         buffer.deleteCharAt(buffer.length()-1);
         // if Left child is traverses Traverse right child 
@@ -43,11 +48,14 @@ public class GrayCode {
     }
 
     public static void main(String[] args) {
-    
-        buffer=new StringBuffer(N);
+       int grayCode=4;
+       buffer=new StringBuffer(N);
        traverse(0,true);
-       traverse(0,false);
-    
+       traverse(0,false);            
+       indexOfGrayCode(grayCode);
+    }
+
+    private static void indexOfGrayCode(int grayCode) {
         
     }
   
