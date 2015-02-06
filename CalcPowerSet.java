@@ -12,6 +12,8 @@ import java.util.Set;
 /**
  *
  * @author venkatramreddykunta
+ * Output: 
+ *          Result Power Set:  [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
  */
 public class CalcPowerSet {
     
