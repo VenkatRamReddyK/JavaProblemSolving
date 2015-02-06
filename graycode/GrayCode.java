@@ -10,11 +10,9 @@ package problemsolving.graycode;
  * @author venkatramreddykunta
  */
 public class GrayCode {
-
     static StringBuffer buffer;
     static int N=5; // gray code of size N
-    static int[] window={0,0,1,0,1,1,0};
-    
+    static int[] window={0,0,1,0,1,1,0};    
     private static void traverse(int index,boolean isFirstHalf) {
         int leftIndex,rightIndex;
         if(!isFirstHalf && index==0)
