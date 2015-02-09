@@ -11,7 +11,7 @@ package problemsolving.permutations;
  */
 public class Permutation {
 
-    static int[] list={4,2,5};
+    static int[] list={4,4,2,5};
     static int N,i,j,k,value,index;
     public static void main(String[] args) {
         N=list.length;
@@ -33,8 +33,6 @@ public class Permutation {
             System.out.println();
         }       
     }
-    
-    
     
 }
     
