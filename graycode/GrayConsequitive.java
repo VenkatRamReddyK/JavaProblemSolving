@@ -29,7 +29,7 @@ public class GrayConsequitive {
 //        
         
         
-        System.out.println(" Consequitive: "+isConsequitive(1,6));
+        System.out.println(" Consequitive: "+isConsequitive(259,263));
         
 //        System.out.println("\n Consequitive: 7,6 "+isConsequitive(gray7,gray6));
 //        System.out.println("Consequitive: 0,2 "+isConsequitive(gray0,gray2));
@@ -55,13 +55,20 @@ public class GrayConsequitive {
     
     
     private static int grayToBinary(int num){
-         int mask;
-            for (mask = num >> 1; mask != 0; mask = mask >> 1)
-            {
-                num = num ^ mask;
-            }
+         for (int mask = num >> 1; mask != 0; mask = mask >> 1)
+           num = num ^ mask;
             return num;
     }
+    
+    
+    private static boolean isConsequitive(int gray1, int gray2) {           
+        if(Math.abs(grayToBinary(gray1)-grayToBinary(gray2))==1)
+            return true;
+        return false;        
+    }   
+    
+//    System.out.println("gray to bin of [ "+gray1+" ] is : "+first);
+//        System.out.println("gray to bin of [ "+gray2+" ] is : "+second);
     
     private static byte[] grayToBinary(byte[] gray1) {
         byte[] bin=new byte[gray1.length];      
@@ -73,20 +80,7 @@ public class GrayConsequitive {
        return bin;
     }
     
-    private static boolean isConsequitive(int gray1, int gray2) {
     
-        int first=grayToBinary(gray1);
-        int second=grayToBinary(gray2);
-        System.out.println("gray to bin of [ "+gray1+" ] is : "+first);
-        System.out.println("gray to bin of [ "+gray2+" ] is : "+second);
-        
-        if(Math.abs(first-second)==1){
-            return true;
-        }
-        else
-            return false;
-        
-    }    
     // overwriting the previous method
     private static boolean isConsequitive(byte[] gray1, byte[] gray2) {
         byte[] bin1=grayToBinary(gray1);

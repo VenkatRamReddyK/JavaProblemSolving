@@ -11,7 +11,7 @@ package problemsolving.graycode;
  */
 public class GrayCode {
     static StringBuffer buffer;
-    static int N=4; // gray code of size N
+    static int N=9; // gray code of size N
 //    static int[] window={0,0,1,0,1,1,0};    
     static int[] windowLeft={0,0,1,0,1,1,0};    
     static int[] windowRight={1,1,0,0,1,1,0};    
