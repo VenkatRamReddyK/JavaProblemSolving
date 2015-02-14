@@ -29,7 +29,7 @@ public class GrayConsequitive {
 //        
         
         
-        System.out.println(" Consequitive: "+isConsequitive(259,263));
+        System.out.println(" Consequitive: "+isConsequitive((byte)129,(byte)127));
         
 //        System.out.println("\n Consequitive: 7,6 "+isConsequitive(gray7,gray6));
 //        System.out.println("Consequitive: 0,2 "+isConsequitive(gray0,gray2));
@@ -52,16 +52,20 @@ public class GrayConsequitive {
 //        
 //        
 //    }
-    
+    // this is a comment
     
     private static int grayToBinary(int num){
-         for (int mask = num >> 1; mask != 0; mask = mask >> 1)
-           num = num ^ mask;
-            return num;
-    }
+         for (int mask = num >> 1; mask != 0; mask = mask >> 1){
+//             System.out.println("Num:"+num+", Mask: "+mask);
+             num = num ^ mask;  
+         }           
+         return num;
+    }    
     
-    
-    private static boolean isConsequitive(int gray1, int gray2) {           
+    private static boolean isConsequitive(byte gray1, byte gray2) {      
+        if(gray1<0 && gray2<0  && (gray1>127 || gray2>127 ))
+            return false;
+                    
         if(Math.abs(grayToBinary(gray1)-grayToBinary(gray2))==1)
             return true;
         return false;        
