@@ -5,16 +5,17 @@
  */
 package problemsolving;
 
-import java.text.DecimalFormat;
-
 /**
  *
  * @author venkatramreddykunta
  */
-public class Test {
-    public static void main(String[] args) {
-        int sum=30;
-        System.out.println("The average is"+(int)((sum/3)*100)/100.00);
- 
-    }
+public class StringTest
+{
+  public static void main(String[] args)
+  {
+    String s = "yo-dude: like, ... []{}this is a string";
+    s = s.replaceAll("[^a-z A-Z0-9]", "");
+    System.out.println(s);
+  }
+
 }

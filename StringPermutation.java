@@ -5,7 +5,7 @@
  */
 package problemsolving;
 
-import static problemsolving.Permutation.N;
+import static problemsolving.permutations.Permutation.N;
 
 /**
  *
