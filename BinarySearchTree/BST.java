@@ -434,10 +434,12 @@ public class BST {
         nodes.add(root);
         Node current;
         boolean breakPointFound=false; 
+        
         while(!nodes.isEmpty()){
            current=nodes.remove(); // 1
            if(breakPointFound && (current.left!=null))
                return false;
+               
            if(current.left!=null) nodes.add(current.left);
            else breakPointFound=true;
            
@@ -448,7 +450,9 @@ public class BST {
         }        
             return true;
     }  
-    
+    private boolean isFullBST(Node root){
+        return true;
+    }
 }
 
 
