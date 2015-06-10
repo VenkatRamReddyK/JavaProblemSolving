@@ -56,13 +56,12 @@ public class EditDistance {
             System.out.println(" ");
         }
         
-        
         System.out.println("Back tracking");
         int i=u.length;
         for(int j=v.length;j>0;){
-            if(u[i-1]==v[j-1]){
+           // if(u[i-1]==v[j-1]){
                 
-                if(dp[i][j]==dp[i-1][j-1]){
+                if(dp[i][j]==dp[i-1][j-1] || dp[i][j]==dp[i-1][j-1]+1){
                 
                     
                     System.out.println("D "+u[i-1]+" - > "+v[j-1]);
@@ -79,25 +78,25 @@ public class EditDistance {
                 i--;
                 }
                 
-            }
-            else{
+            //}
+            //else{
                 
-                if(dp[i][j]==dp[i-1][j-1]+1){
-                    
-                    System.out.println("D "+u[i-1]+" - > "+v[j-1]);
-                    i--;j--;
-                }
-                else if(dp[i][j]==dp[i][j-1]){
-                    
-                    System.out.println("L "+u[i-1]+" - > "+v[j-1]);
-                j--;
-                }
-                else if(dp[i][j]==dp[i-1][j]){
-                
-                    System.out.println("U "+u[i-1]+" - > "+v[j-1]);
-                    i--;
-                }
-            }
+//                if(dp[i][j]==dp[i-1][j-1]+1){
+//                    
+//                    System.out.println("D "+u[i-1]+" - > "+v[j-1]);
+//                    i--;j--;
+//                }
+//                else if(dp[i][j]==dp[i][j-1]){
+//                    
+//                    System.out.println("L "+u[i-1]+" - > "+v[j-1]);
+//                j--;
+//                }
+//                else if(dp[i][j]==dp[i-1][j]){
+//                
+//                    System.out.println("U "+u[i-1]+" - > "+v[j-1]);
+//                    i--;
+//                }
+          //  }
         }
         
         

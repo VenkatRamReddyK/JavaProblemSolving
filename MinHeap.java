@@ -14,10 +14,7 @@ public class MinHeap {
     int[] heap={};
     public static void main(String[] args) {
        MinHeap minHeap=new MinHeap();
-       minHeap.process();
-       
-
-                
+       minHeap.process();               
     }
     public void process(){
         if (mylist.length>0)

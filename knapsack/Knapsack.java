@@ -38,8 +38,9 @@ public class Knapsack {
                     knapsack[i][j]=Math.max(knapsack[i-1][j], (knapsack[i-1][j-weight[i-1]]+cost[i-1]));
                 else
                     knapsack[i][j]=knapsack[i-1][j];
-//                System.out.println("j:"+j+", knapsack:"+knapsack[i][j]);
+                System.out.print(" "+knapsack[i][j]);//"j:"+j+", knapsack:"+
             }
+            System.out.println();
         }
         System.out.println("Max Capacity: "+knapsack[6][8]);
         

@@ -59,9 +59,9 @@ public class LCS {
            }
     // Backtracking    
            
-          i=m;
-          for(j=n;j>0 && i>0;){
-              
+          i=m;  j=n;
+          
+          while(j>0 && i>0){              
              // System.out.println("i: "+i+"top "+top[j-1]+",j: "+j+" , left: "+left[i-1]);
               if(left[i-1]==top[j-1]){ 
                   solution.append(left[i-1]);

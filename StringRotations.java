@@ -21,7 +21,8 @@ public class StringRotations {
             if(string1.toString().equals(string2.toString())){
                 equals=true;
                 break;
-            }count++;
+            }
+            count++;
             
             System.out.println("count: "+count);
         }
