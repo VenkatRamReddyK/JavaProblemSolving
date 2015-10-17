@@ -21,8 +21,7 @@ public class Knapsack {
     int[][] knapsack=new int[7][9];
     int weight[]={1,2,3,4,2,1};
     int cost[]={2,4,5,5,2,3};
-    ArrayList<Integer> finalList=new ArrayList<>();
-    
+    ArrayList<Integer> finalList=new ArrayList<>();    
         for (int i = 0; i < 9; i++) {
             knapsack[0][i]=0;
         }

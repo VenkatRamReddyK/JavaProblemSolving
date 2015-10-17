@@ -195,7 +195,7 @@ public class BST {
 
         else if(current.left==null && current.right==null )
             return 1;
-        else if(current.left==null ){
+        else if (current.left == null) {
             currentDiameter=diameter(current.right) +   1;
             if(currentDiameter>maxDiameter){
                 maxDiameter=currentDiameter;    
